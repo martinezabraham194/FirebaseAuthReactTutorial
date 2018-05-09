@@ -7,12 +7,12 @@ import NavigationAuth from './NavigationAuth/NavigationAuth';
 import NavigationNonAuth from './NavigationNonAuth/NavigationNonAuth';
 import AuthUserContext from '../../constants/AuthUserContext';
 
-const Navigation = ({authUser}) => (
+const Navigation = () => (
   <AuthUserContext.Consumer>
-    { authUser
-      ? <NavigationAuth />
-      : <NavigationNonAuth />
-    }
+      { authUser => authUser
+        ? <NavigationAuth />
+        : <NavigationNonAuth />
+      }
   </AuthUserContext.Consumer>
 )
 
