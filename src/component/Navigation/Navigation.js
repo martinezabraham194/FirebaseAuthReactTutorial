@@ -5,14 +5,15 @@ import * as routes from '../../constants/routes';
 import SignOut from '../SignOut/SignOut';
 import NavigationAuth from './NavigationAuth/NavigationAuth';
 import NavigationNonAuth from './NavigationNonAuth/NavigationNonAuth';
+import AuthUserContext from '../../constants/AuthUserContext';
 
 const Navigation = ({authUser}) => (
-  <div>
+  <AuthUserContext.Consumer>
     { authUser
       ? <NavigationAuth />
       : <NavigationNonAuth />
     }
-  </div>
+  </AuthUserContext.Consumer>
 )
 
 export default Navigation;
