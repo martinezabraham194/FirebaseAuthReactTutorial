@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 
 import SignUpForm from './SignUpForm/SignUpForm';
 import SignUpLink from './SignUpLink/SignUpLink';
 
-const signUp = () => (
+const signUp = ({history}) => (
   <div>
-    <SignUpForm />
+    <SignUpForm history={history}/>
   </div>
 )
 
-export default signUp;
+export default withRouter(signUp);
